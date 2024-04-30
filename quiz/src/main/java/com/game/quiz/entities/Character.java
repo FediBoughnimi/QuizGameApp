@@ -2,7 +2,8 @@ package com.game.quiz.entities;
 
 import jakarta.persistence.*;
 
-@Table(name="Charater")
+@Table(name = "`character`")
+
 @Entity
 public class Character {
     @Id

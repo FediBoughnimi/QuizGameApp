@@ -7,14 +7,14 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
 public class QuizApplication implements CommandLineRunner {
-	@Autowired
+
 	public static void main(String[] args) {
 		SpringApplication.run(QuizApplication.class, args);
 	}
 
 	@Override
 	public void run(String... args) throws Exception {
-		// TODO Auto-generated method stub
-
+		// Add your logic here
+		System.out.println("Application started!");
 	}
 }

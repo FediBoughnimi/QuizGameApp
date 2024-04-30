@@ -1,6 +1,6 @@
 package com.game.quiz;
 
-import org.springframework.beans.factory.annotation.Autowired;
+
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
@@ -17,4 +17,5 @@ public class QuizApplication implements CommandLineRunner {
 		// Add your logic here
 		System.out.println("Application started!");
 	}
+
 }

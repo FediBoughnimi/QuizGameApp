@@ -12,13 +12,13 @@ public class Player {
 	private Long idPlayer;
 	private String userName;
 	private String email;
-	private Double password;
+	private String password;
 	private int score;
 	private int gold;
 	public Player() {
 		super();
 	}
-	public Player(String userName, String email, Double password, int score, int gold) {
+	public Player(String userName, String email, String password, int score, int gold) {
 		super();
 		this.userName = userName;
 		this.email = email;
@@ -38,10 +38,10 @@ public class Player {
 	public void setEmail(String email) {
 		this.email = email;
 	}
-	public Double getPassword() {
+	public String getPassword() {
 		return password;
 	}
-	public void setPassword(Double password) {
+	public void setPassword(String password) {
 		this.password = password;
 	}
 	public int getScore() {

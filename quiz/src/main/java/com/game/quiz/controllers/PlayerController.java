@@ -17,18 +17,21 @@ public class PlayerController {
     // Get all players
     @GetMapping
     public List<Player> getAllPlayers() {
+
         return playerRepository.findAll();
     }
 
     // Get player by ID
     @GetMapping("/{id}")
     public Player getPlayerById(@PathVariable Long id) {
+
         return playerRepository.findById(id).orElse(null);
     }
 
     // Add a new player
     @PostMapping
     public Player addPlayer(@RequestBody Player player) {
+
         return playerRepository.save(player);
     }
 
@@ -50,6 +53,7 @@ public class PlayerController {
     // Delete a player
     @DeleteMapping("/{id}")
     public void deletePlayer(@PathVariable Long id) {
+
         playerRepository.deleteById(id);
     }
 }

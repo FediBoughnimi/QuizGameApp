@@ -10,7 +10,9 @@ public class Player {
 	@Id
 	@GeneratedValue (strategy = GenerationType.IDENTITY)
 	private Long idPlayer;
+	@Column(unique = true)
 	private String userName;
+	@Column(unique = true)
 	private String email;
 	private String password;
 	private int score;
@@ -22,13 +24,13 @@ public class Player {
 	public Player() {
 
 	}
-	public Player(String userName, String email, String password, int score, int gold) {
+	public Player(String userName, String email, String password) {
 		super();
 		this.userName = userName;
 		this.email = email;
 		this.password = password;
-		this.score = score;
-		this.gold = gold;
+		this.score = 0;
+		this.gold = 0;
 		characterShoppings = new HashSet<>();
 
 	}

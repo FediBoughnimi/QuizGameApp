@@ -1,6 +1,8 @@
 package com.game.quiz.entities;
 
 import jakarta.persistence.*;
+import java.util.HashSet;
+import java.util.Set;
 
 @Table(name = "`character`")
 
@@ -11,17 +13,21 @@ public class Character {
     private Long character_id;
     private String character_name;
     private String character_photo;
-    private String Descrition;
+    private String Description;
     private int Price;
+    @OneToMany(mappedBy = "character")
+    private Set<character_shopping> characterShoppings ;
+
 
     public Character() {
     }
 
-    public Character(String character_name, String character_photo, String descrition, int price) {
+    public Character(String character_name, String character_photo, String description, int price) {
         this.character_name = character_name;
         this.character_photo = character_photo;
-        Descrition = descrition;
+        Description = description;
         Price = price;
+        characterShoppings = new HashSet<>();
     }
 
     public String getCharacter_name() {
@@ -32,8 +38,8 @@ public class Character {
         return character_photo;
     }
 
-    public String getDescrition() {
-        return Descrition;
+    public String getDescription() {
+        return Description;
     }
 
     public int getPrice() {
@@ -48,8 +54,8 @@ public class Character {
         this.character_photo = character_photo;
     }
 
-    public void setDescrition(String descrition) {
-        Descrition = descrition;
+    public void setDescription(String description) {
+        Description = description;
     }
 
     public void setPrice(int price) {
@@ -62,7 +68,7 @@ public class Character {
                 "character_id=" + character_id +
                 ", character_name='" + character_name + '\'' +
                 ", character_photo='" + character_photo + '\'' +
-                ", Descrition='" + Descrition + '\'' +
+                ", Description='" + Description + '\'' +
                 ", Price=" + Price +
                 '}';
     }

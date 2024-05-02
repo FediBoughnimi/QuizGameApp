@@ -1,9 +1,9 @@
 package com.game.quiz.entities;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
+import jakarta.persistence.*;
+import java.util.HashSet;
+import java.util.Set;
+
 
 @Entity
 public class Player {
@@ -15,8 +15,12 @@ public class Player {
 	private String password;
 	private int score;
 	private int gold;
+
+	@OneToMany(mappedBy = "player")
+	private Set<character_shopping> characterShoppings;
+
 	public Player() {
-		super();
+
 	}
 	public Player(String userName, String email, String password, int score, int gold) {
 		super();
@@ -25,6 +29,8 @@ public class Player {
 		this.password = password;
 		this.score = score;
 		this.gold = gold;
+		characterShoppings = new HashSet<>();
+
 	}
 	public String getUserName() {
 		return userName;
@@ -61,5 +67,5 @@ public class Player {
 		return "Player [userName=" + userName + ", email=" + email + ", password=" + password + ", score=" + score
 				+ ", gold=" + gold + "]";
 	}
-	
+
 }

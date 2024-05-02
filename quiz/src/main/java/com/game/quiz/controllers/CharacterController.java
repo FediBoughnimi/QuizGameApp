@@ -1,6 +1,7 @@
 package com.game.quiz.controllers;
 
 import com.game.quiz.entities.Character;
+import com.game.quiz.entities.Player;
 import com.game.quiz.repositories.CharacterRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
@@ -17,15 +18,22 @@ public class CharacterController {
 
     @GetMapping
     public List<Character> getAllCharacters() {
-
         return characterRepository.findAll();
     }
 
-    @PostMapping
+    @GetMapping("/{id}")
+    public Character getCharacterById(@PathVariable Long id) {
+
+        return characterRepository.findById(id).orElse(null);
+    }
+
+
+    @PostMapping("/add")
     public Character addCharacter(@RequestBody Character character) {
 
         return characterRepository.save(character);
     }
+    //we well not use this on the application later
     @PutMapping("/{id}")
     public Character updateCharacter(@PathVariable Long id, @RequestBody Character characterDetails) {
         Character character = characterRepository.findById(id).orElse(null);
@@ -39,7 +47,7 @@ public class CharacterController {
         return null;
     }
 
-
+    //we well not use this on the application later
     @DeleteMapping("/{id}")
     public void deleteCharacter(@PathVariable Long id) {
 

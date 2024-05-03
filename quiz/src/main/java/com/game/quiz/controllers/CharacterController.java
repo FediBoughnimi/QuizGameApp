@@ -1,8 +1,7 @@
 package com.game.quiz.controllers;
 
 import com.game.quiz.entities.Character;
-import com.game.quiz.entities.Player;
-import com.game.quiz.repositories.CharacterRepository;
+import com.game.quiz.services.CharacterService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
@@ -13,44 +12,32 @@ import java.util.List;
 @RequestMapping("/characters")
 public class CharacterController {
 
+
     @Autowired
-    private CharacterRepository characterRepository;
+    private CharacterService characterService;
 
     @GetMapping
     public List<Character> getAllCharacters() {
-        return characterRepository.findAll();
+        return characterService.getAllCharacters();
     }
 
     @GetMapping("/{id}")
     public Character getCharacterById(@PathVariable Long id) {
-
-        return characterRepository.findById(id).orElse(null);
+        return characterService.getCharacterById(id);
     }
-
 
     @PostMapping("/add")
     public Character addCharacter(@RequestBody Character character) {
-
-        return characterRepository.save(character);
+        return characterService.addCharacter(character);
     }
-    //we well not use this on the application later
+
     @PutMapping("/{id}")
     public Character updateCharacter(@PathVariable Long id, @RequestBody Character characterDetails) {
-        Character character = characterRepository.findById(id).orElse(null);
-        if (character != null) {
-            character.setCharacter_name(characterDetails.getCharacter_name());
-            character.setDescription(characterDetails.getDescription());
-            character.setCharacter_photo(characterDetails.getCharacter_photo());
-            character.setPrice(characterDetails.getPrice());
-            return characterRepository.save(character);
-        }
-        return null;
+        return characterService.updateCharacter(id, characterDetails);
     }
 
-    //we well not use this on the application later
     @DeleteMapping("/{id}")
     public void deleteCharacter(@PathVariable Long id) {
-
-        characterRepository.deleteById(id);
+        characterService.deleteCharacter(id);
     }
 }

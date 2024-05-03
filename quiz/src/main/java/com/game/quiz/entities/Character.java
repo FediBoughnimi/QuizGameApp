@@ -15,6 +15,7 @@ public class Character {
     private String character_photo;
     private String Description;
     private int Price;
+
     @OneToMany(mappedBy = "character")
     private Set<character_shopping> characterShoppings ;
 

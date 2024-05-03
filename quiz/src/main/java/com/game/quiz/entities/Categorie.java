@@ -1,9 +1,10 @@
 package com.game.quiz.entities;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
+import jakarta.persistence.*;
+
+import java.util.Collection;
+
+import java.util.Set;
 
 @Entity
 public class Categorie {
@@ -12,6 +13,20 @@ public class Categorie {
 	private int idCategorie;
 	private String CategorieName;
 	private String CategorieDescription;
+
+	@OneToMany(mappedBy = "Categorie", cascade = CascadeType.ALL)/*One is the 'Categorie'(name of class) and Many is 'Partie'
+    Cela signifie qu'une instance de cette classe peut avoir plusieurs instances associées d'une autre classe.*/
+	public Collection<Partie> F ; //the Many
+
+	@OneToMany(mappedBy = "Categorie", cascade = CascadeType.ALL)/*One is the 'Categorie'(name of class) and Many is 'Question'
+    Cela signifie qu'une instance de cette classe peut avoir plusieurs instances associées d'une autre classe.*/
+	public Collection <Question> G ; //the Many
+
+	@ManyToMany(mappedBy = "categories")
+	private Set<Level> levels;
+	// we annotate the levels field with @ManyToMany(mappedBy = "categories").
+	// This tells JPA that the relationship is mapped by the categories field in the Level class.
+
 	public Categorie() {
 		super();
 	}

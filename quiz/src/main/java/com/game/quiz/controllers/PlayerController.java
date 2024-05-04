@@ -17,23 +17,26 @@ public class PlayerController {
     // Get all players
     @GetMapping
     public List<Player> getAllPlayers() {
+
         return playerRepository.findAll();
     }
 
     // Get player by ID
     @GetMapping("/{id}")
     public Player getPlayerById(@PathVariable Long id) {
+
         return playerRepository.findById(id).orElse(null);
     }
 
     // Add a new player
-    @PostMapping
+    @PostMapping("/add")
     public Player addPlayer(@RequestBody Player player) {
+
         return playerRepository.save(player);
     }
 
     // Update player details
-    @PutMapping("/{id}")
+    @PutMapping("/update/{id}")
     public Player updatePlayer(@PathVariable Long id, @RequestBody Player playerDetails) {
         Player player = playerRepository.findById(id).orElse(null);
         if (player != null) {
@@ -48,8 +51,9 @@ public class PlayerController {
     }
 
     // Delete a player
-    @DeleteMapping("/{id}")
+    @DeleteMapping("/delete/{id}")
     public void deletePlayer(@PathVariable Long id) {
+
         playerRepository.deleteById(id);
     }
 }

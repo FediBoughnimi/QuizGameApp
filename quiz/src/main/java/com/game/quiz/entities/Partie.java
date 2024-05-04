@@ -1,9 +1,6 @@
 package com.game.quiz.entities;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
+import jakarta.persistence.*;
 
 @Entity
 public class Partie {
@@ -11,6 +8,9 @@ public class Partie {
 	@GeneratedValue (strategy = GenerationType.IDENTITY)
 	private int idPartie;
 	private int levelReached;
+	@ManyToOne
+	@JoinColumn(name = "idPlayer")
+	private Player player;
 	public Partie() {
 		super();
 	}
@@ -28,5 +28,12 @@ public class Partie {
 	public String toString() {
 		return "Partie [levelReached=" + levelReached + "]";
 	}
-	
+
+	public void setIdPartie(Integer idPartie) {
+		this.idPartie = idPartie;
+	}
+
+	public Integer getIdPartie() {
+		return idPartie;
+	}
 }

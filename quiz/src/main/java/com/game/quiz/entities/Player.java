@@ -1,9 +1,9 @@
 package com.game.quiz.entities;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
+import jakarta.persistence.*;
+
+import java.util.ArrayList;
+import java.util.List;
 
 @Entity
 public class Player {
@@ -12,13 +12,15 @@ public class Player {
 	private Long idPlayer;
 	private String userName;
 	private String email;
-	private Double password;
+	private String password;
 	private int score;
 	private int gold;
+	@OneToMany(mappedBy = "player", cascade = CascadeType.ALL, orphanRemoval = true)
+	private List<Partie> parties = new ArrayList<>();
 	public Player() {
 		super();
 	}
-	public Player(String userName, String email, Double password, int score, int gold) {
+	public Player(String userName, String email, String password, int score, int gold) {
 		super();
 		this.userName = userName;
 		this.email = email;
@@ -38,10 +40,10 @@ public class Player {
 	public void setEmail(String email) {
 		this.email = email;
 	}
-	public Double getPassword() {
+	public String getPassword() {
 		return password;
 	}
-	public void setPassword(Double password) {
+	public void setPassword(String password) {
 		this.password = password;
 	}
 	public int getScore() {
@@ -61,5 +63,5 @@ public class Player {
 		return "Player [userName=" + userName + ", email=" + email + ", password=" + password + ", score=" + score
 				+ ", gold=" + gold + "]";
 	}
-	
+
 }

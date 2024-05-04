@@ -7,4 +7,5 @@ import org.springframework.stereotype.Repository;
 @Repository
 public interface LevelRepository extends JpaRepository<Level, Long> {
     // You can add custom query methods here if needed
+    Level findBylevelNumber(int levelNumber);
 }

@@ -1,4 +1,10 @@
 package com.game.quiz.services;
 
-public class LevelServices {
+import com.game.quiz.entities.Level;
+
+public interface LevelServices {
+
+        Level recherchNiveau(int numNiveau);
+
 }
+

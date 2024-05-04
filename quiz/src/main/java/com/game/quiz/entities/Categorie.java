@@ -35,6 +35,7 @@ public class Categorie {
 		this.CategorieName = categorieName;
 		this.CategorieDescription = categorieDescription;
 	}
+	public int getIdCategorie() { return idCategorie; }
 	public String getCategorieName() {
 		return CategorieName;
 	}

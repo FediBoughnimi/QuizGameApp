@@ -1,32 +1,38 @@
 package com.game.quiz.entities;
 
 import jakarta.persistence.*;
+import java.util.HashSet;
+import java.util.Set;
 
-import java.util.ArrayList;
-import java.util.List;
 
 @Entity
 public class Player {
 	@Id
 	@GeneratedValue (strategy = GenerationType.IDENTITY)
 	private Long idPlayer;
+	@Column(unique = true)
 	private String userName;
+	@Column(unique = true)
 	private String email;
 	private String password;
 	private int score;
 	private int gold;
-	@OneToMany(mappedBy = "player", cascade = CascadeType.ALL, orphanRemoval = true)
-	private List<Partie> parties;
+
+	@OneToMany(mappedBy = "player")
+	private Set<character_shopping> characterShoppings;
+
 	public Player() {
-		super();
+
 	}
-	public Player(String userName, String email, String password, int score, int gold) {
+	public Player(String userName, String email, String password) {
 		super();
 		this.userName = userName;
 		this.email = email;
 		this.password = password;
-		this.score = score;
-		this.gold = gold;
+		this.score = 0;
+		this.gold = 0;
+		characterShoppings = new HashSet<>();
+
 	}
 	public String getUserName() {
 		return userName;

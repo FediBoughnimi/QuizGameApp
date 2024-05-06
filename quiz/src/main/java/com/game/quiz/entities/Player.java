@@ -16,7 +16,7 @@ public class Player {
 	private int score;
 	private int gold;
 	@OneToMany(mappedBy = "player", cascade = CascadeType.ALL, orphanRemoval = true)
-	private List<Partie> parties = new ArrayList<>();
+	private List<Partie> parties;
 	public Player() {
 		super();
 	}

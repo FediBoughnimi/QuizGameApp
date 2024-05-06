@@ -15,7 +15,7 @@ public class PartieController {
     @Autowired
     private PartieService partieService;
 
-    @GetMapping("/")
+    @GetMapping()
     public List<Partie> getAllParties() {
         return partieService.getAllParties();
     }
@@ -25,7 +25,7 @@ public class PartieController {
         return partieService.getPartieById(id);
     }
 
-    @PostMapping("/")
+    @PostMapping("/add")
     public Partie addPartie(@RequestBody Partie partie) {
         return partieService.savePartie(partie);
     }

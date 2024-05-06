@@ -29,14 +29,14 @@ public class PlayerController {
     }
 
     // Add a new player
-    @PostMapping
+    @PostMapping("/add")
     public Player addPlayer(@RequestBody Player player) {
 
         return playerRepository.save(player);
     }
 
     // Update player details
-    @PutMapping("/{id}")
+    @PutMapping("/update/{id}")
     public Player updatePlayer(@PathVariable Long id, @RequestBody Player playerDetails) {
         Player player = playerRepository.findById(id).orElse(null);
         if (player != null) {
@@ -51,7 +51,7 @@ public class PlayerController {
     }
 
     // Delete a player
-    @DeleteMapping("/{id}")
+    @DeleteMapping("/delete/{id}")
     public void deletePlayer(@PathVariable Long id) {
 
         playerRepository.deleteById(id);

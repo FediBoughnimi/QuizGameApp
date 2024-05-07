@@ -14,13 +14,15 @@ public class Level {
 	private String difficulty;
 	private String description;
 
+///////////////////////////// this is the new coulumn
+	private int Number_level;
+
+
+
 	@OneToMany(mappedBy = "Level", cascade = CascadeType.ALL)/*One is the 'Level'(name of class) and Many is 'Question'
     Cela signifie qu'une instance de cette classe peut avoir plusieurs instances associées d'une autre classe.*/
 	public Collection <Question> x ; //the Many
 
-	@OneToMany(mappedBy = "Level", cascade = CascadeType.ALL)/*One is the 'Level'(name of class) and Many is 'Partie'
-    Cela signifie qu'une instance de cette classe peut avoir plusieurs instances associées d'une autre classe.*/
-	public Collection <Partie> y ; //the Many
 
 	@ManyToMany
 	@JoinTable(

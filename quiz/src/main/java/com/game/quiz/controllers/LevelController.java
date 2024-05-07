@@ -7,16 +7,30 @@ import org.springframework.web.bind.annotation.RestController;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.List;
+
 @RestController
-@RequestMapping("/level")
+@RequestMapping("/levels")
 
 public class LevelController {
     @Autowired
     private LevelServices levelServices;
 
 
-    @GetMapping("/recherche/{numNiveau}")
-    public Level recherchNiveau(@PathVariable int numNiveau) {
-        return levelServices.recherchNiveau(numNiveau);
+    @GetMapping("/{numNiveau}")
+    public Level getlevelById(@PathVariable int numNiveau) {
+        return levelServices.getlevelById(numNiveau);
     }
+
+    //////////////////////
+    @GetMapping("/category/{idCategorie}")
+    public List<Level> getAllLevelsByCategoryId(@PathVariable int idCategorie) {
+        return levelServices.getAllLevelByIdCategory(idCategorie);
+    }
+    //////////////////////
+    @GetMapping("/category/{idCategorie}/level/{numberLevel}")
+    public List<Level> getLevelByNumberByCategory(@PathVariable int idCategorie, @PathVariable int numberLevel) {
+        return levelServices.getLevelByNumberByCategory(idCategorie, numberLevel);
+    }
+    //////////////////////
 }

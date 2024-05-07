@@ -1,9 +1,6 @@
 package com.game.quiz.entities;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
+import jakarta.persistence.*;
 
 @Entity
 public class Question {
@@ -13,6 +10,16 @@ public class Question {
 	private String containt;
 	private String correctAnswer;
 	private int goldQuestion;
+
+
+	@ManyToOne
+	@JoinColumn(name = "idCategorie")
+	private Categorie Categorie;
+	@ManyToOne
+	@JoinColumn(name = "levelNumber")
+	private Level Level; // corrected property name to match the mappedBy attribute in Level
+
+
 	public Question() {
 		super();
 	}

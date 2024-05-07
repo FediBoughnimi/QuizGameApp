@@ -1,9 +1,10 @@
 package com.game.quiz.entities;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
+import jakarta.persistence.*;
+
+import java.util.ArrayList;
+import java.util.HashSet;
+import java.util.List;
 
 @Entity
 public class Level {
@@ -12,13 +13,22 @@ public class Level {
 	private int levelNumber;
 	private String difficulty;
 	private String description;
+
+	@OneToMany(mappedBy = "level" , cascade = CascadeType.ALL)
+	private List<Question> questions;
+
+	@ManyToOne
+	private Categorie categorie;
+
 	public Level() {
 		super();
 	}
-	public Level(String difficulty, String description) {
+	public Level(String difficulty, String description , Categorie categorie) {
 		super();
 		this.difficulty = difficulty;
 		this.description = description;
+		this.categorie = categorie;
+		this.questions = new ArrayList<>();
 	}
 	public String getDifficulty() {
 		return difficulty;

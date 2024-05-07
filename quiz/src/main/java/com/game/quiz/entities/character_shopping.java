@@ -8,7 +8,7 @@ import java.util.Date;
 public class character_shopping {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private long shopping_id ;
+    private long shopping_id;
     private Date shopping_date;
 
     @ManyToOne
@@ -25,6 +25,7 @@ public class character_shopping {
     public character_shopping(Player player, Character character) {
         this.player = player;
         this.character = character;
+        this.shopping_date = new Date();
     }
 
     public Date getShopping_date() {

@@ -2,6 +2,7 @@ package com.game.quiz.entities;
 
 import jakarta.persistence.*;
 import java.util.HashSet;
+import java.util.List;
 import java.util.Set;
 
 
@@ -18,8 +19,11 @@ public class Player {
 	private int score;
 	private int gold;
 
-	@OneToMany(mappedBy = "player")
+	@OneToMany(mappedBy = "player" , cascade = CascadeType.ALL)
 	private Set<character_shopping> characterShoppings;
+
+	@OneToMany(mappedBy = "player" , cascade = CascadeType.ALL)
+	private List<Partie> parties;
 
 	public Player() {
 

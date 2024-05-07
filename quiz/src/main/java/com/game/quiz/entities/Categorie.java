@@ -1,9 +1,8 @@
 package com.game.quiz.entities;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
+import jakarta.persistence.*;
+
+import java.util.List;
 
 @Entity
 public class Categorie {
@@ -12,6 +11,16 @@ public class Categorie {
 	private int idCategorie;
 	private String CategorieName;
 	private String CategorieDescription;
+
+	@OneToMany(mappedBy = "categorie" , cascade = CascadeType.ALL)
+	private List<Partie> Parties;
+
+	@OneToMany(mappedBy = "categorie" , cascade = CascadeType.ALL)
+	private List<Level> levels;
+
+	@OneToMany(mappedBy = "categorie" , cascade = CascadeType.ALL)
+	private List<Question> questions;
+
 	public Categorie() {
 		super();
 	}

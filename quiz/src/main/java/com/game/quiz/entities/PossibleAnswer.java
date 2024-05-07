@@ -1,9 +1,6 @@
 package com.game.quiz.entities;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
+import jakarta.persistence.*;
 
 @Entity
 public class PossibleAnswer {
@@ -11,11 +8,16 @@ public class PossibleAnswer {
 	@GeneratedValue (strategy = GenerationType.IDENTITY)
 	private int idPossibleAnswer;
 	private String possibleAnswer;
+
+	@ManyToOne
+	private Question question;
+
 	public PossibleAnswer() {
 		super();
 	}
-	public PossibleAnswer(String possibleAnswer) {
+	public PossibleAnswer(String possibleAnswer , Question question) {
 		super();
+		this.question = question;
 		this.possibleAnswer = possibleAnswer;
 	}
 	public String getPossibleAnswer() {

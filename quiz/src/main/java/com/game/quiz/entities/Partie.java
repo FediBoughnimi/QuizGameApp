@@ -6,7 +6,7 @@ import jakarta.persistence.*;
 public class Partie {
 
 	@Id
-	@GeneratedValue (strategy = GenerationType.IDENTITY)
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private int idPartie;
 	private int levelReached;
 
@@ -17,7 +17,6 @@ public class Partie {
 	@ManyToOne
 	@JoinColumn(name ="idCategorie")
 	private Categorie categorie;
-
 
 
 	public Partie() {

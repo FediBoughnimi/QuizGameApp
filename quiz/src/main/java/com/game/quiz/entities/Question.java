@@ -15,9 +15,11 @@ public class Question {
 	private int goldQuestion;
 
 	@ManyToOne
+	@JoinColumn(name = "idLevel")
 	private Level level;
 
 	@ManyToOne
+	@JoinColumn(name = "idCategorie")
 	private Categorie categorie;
 
 	@OneToMany(mappedBy = "question" , cascade = CascadeType.ALL)

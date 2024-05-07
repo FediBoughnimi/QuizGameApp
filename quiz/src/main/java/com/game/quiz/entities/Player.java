@@ -68,10 +68,16 @@ public class Player {
 	public void setGold(int gold) {
 		this.gold = gold;
 	}
+
+	public void setIdPlayer(Long idPlayer) {
+		this.idPlayer = idPlayer;
+	}
+
 	@Override
 	public String toString() {
 		return "Player [userName=" + userName + ", email=" + email + ", password=" + password + ", score=" + score
 				+ ", gold=" + gold + "]";
 	}
+
 
 }

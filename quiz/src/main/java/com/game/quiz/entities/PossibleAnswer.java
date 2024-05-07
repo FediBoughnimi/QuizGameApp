@@ -10,6 +10,7 @@ public class PossibleAnswer {
 	private String possibleAnswer;
 
 	@ManyToOne
+	@JoinColumn(name = "idQuestion")
 	private Question question;
 
 	public PossibleAnswer() {

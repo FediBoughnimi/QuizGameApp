@@ -20,8 +20,6 @@ public class QuizApplication implements CommandLineRunner {
 	public void run(String... args) throws Exception {
 		// Add your logic here
 		System.out.println("Application started!");
-
-
 	}
 
 }

@@ -4,16 +4,18 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="a7ea3af8-4a4f-4656-b170-380d732420bb" name="Changes" comment="add unversioned files">
+    <list default="true" id="a7ea3af8-4a4f-4656-b170-380d732420bb" name="Changes" comment="Adding the RelationShips between all entities">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/quiz/src/main/java/com/game/quiz/QuizApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/quiz/src/main/java/com/game/quiz/QuizApplication.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/quiz/src/main/java/com/game/quiz/entities/Categorie.java" beforeDir="false" afterPath="$PROJECT_DIR$/quiz/src/main/java/com/game/quiz/entities/Categorie.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/quiz/src/main/java/com/game/quiz/controllers/PartieController.java" beforeDir="false" afterPath="$PROJECT_DIR$/quiz/src/main/java/com/game/quiz/controllers/PartieController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/quiz/src/main/java/com/game/quiz/entities/Level.java" beforeDir="false" afterPath="$PROJECT_DIR$/quiz/src/main/java/com/game/quiz/entities/Level.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/quiz/src/main/java/com/game/quiz/entities/Partie.java" beforeDir="false" afterPath="$PROJECT_DIR$/quiz/src/main/java/com/game/quiz/entities/Partie.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/quiz/src/main/java/com/game/quiz/entities/Player.java" beforeDir="false" afterPath="$PROJECT_DIR$/quiz/src/main/java/com/game/quiz/entities/Player.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/quiz/src/main/java/com/game/quiz/entities/PossibleAnswer.java" beforeDir="false" afterPath="$PROJECT_DIR$/quiz/src/main/java/com/game/quiz/entities/PossibleAnswer.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/quiz/src/main/java/com/game/quiz/entities/Question.java" beforeDir="false" afterPath="$PROJECT_DIR$/quiz/src/main/java/com/game/quiz/entities/Question.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/quiz/src/main/java/com/game/quiz/entities/character_shopping.java" beforeDir="false" afterPath="$PROJECT_DIR$/quiz/src/main/java/com/game/quiz/entities/character_shopping.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/quiz/src/main/java/com/game/quiz/repositories/PartieRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/quiz/src/main/java/com/game/quiz/repositories/PartieRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/quiz/src/main/java/com/game/quiz/services/PartieService.java" beforeDir="false" afterPath="$PROJECT_DIR$/quiz/src/main/java/com/game/quiz/services/PartieService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/quiz/src/main/java/com/game/quiz/services/PartieServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/quiz/src/main/java/com/game/quiz/services/PartieServiceImpl.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -69,11 +71,31 @@
       <option name="project" value="LOCAL" />
       <updated>1715022646210</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="Adding the RelationShips between all entities">
+      <option name="closed" value="true" />
+      <created>1715098348556</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1715098348556</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="add unversioned files" />
-    <option name="LAST_COMMIT_MESSAGE" value="add unversioned files" />
+    <MESSAGE value="Adding the RelationShips between all entities" />
+    <option name="LAST_COMMIT_MESSAGE" value="Adding the RelationShips between all entities" />
   </component>
 </project>

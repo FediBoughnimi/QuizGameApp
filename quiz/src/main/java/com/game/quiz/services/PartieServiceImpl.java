@@ -1,6 +1,7 @@
 package com.game.quiz.services;
 
 import com.game.quiz.entities.Partie;
+import com.game.quiz.entities.Player;
 import com.game.quiz.repositories.PartieRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -32,6 +33,11 @@ public class PartieServiceImpl implements PartieService {
     @Override
     public void deletePartie(Integer id) {
         partieRepository.deleteById(id);
+    }
+
+    @Override
+    public List<Partie> getAllPartiesByPlayer(Player player) {
+        return partieRepository.findAllByPlayer(player);
     }
 
     // Ajouter d'autres méthodes si nécessaire

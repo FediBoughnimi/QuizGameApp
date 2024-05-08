@@ -1,87 +1,74 @@
 package com.game.quiz.entities;
 
+import java.util.Collection;
+
 import jakarta.persistence.*;
 
-import java.util.ArrayList;
-import java.util.HashSet;
-import java.util.List;
+import java.util.Set;
 
 @Entity
 public class Level {
 	@Id
 	@GeneratedValue (strategy = GenerationType.IDENTITY)
-	private int levelId;
 	private int levelNumber;
 	private String difficulty;
 	private String description;
 
-	@OneToMany(mappedBy = "level" , cascade = CascadeType.ALL)
-	private List<Question> questions;
+///////////////////////////// this is the new coulumn
 
-	@ManyToOne
-	@JoinColumn(name = "idCategorie")
-	private Categorie categorie;
+
+
+
+	@OneToMany(mappedBy = "Level", cascade = CascadeType.ALL)/*One is the 'Level'(name of class) and Many is 'Question'
+    Cela signifie qu'une instance de cette classe peut avoir plusieurs instances associées d'une autre classe.*/
+	public Collection <Question> questions; //the Many
+
+
+	@ManyToMany
+	@JoinTable(
+			name = "Level_Categorie",
+			joinColumns = @JoinColumn(name = "levelNumber"),
+			inverseJoinColumns = @JoinColumn(name = "idCategorie")
+	)
+	private Set<Categorie> categories;
+
+	/**name = "Level_Categorie": This specifies the name of the join table that will be created in the
+	 database to manage the many-to-many relationship between Level and Categorie entities. In this case,
+	 the join table will be named Level_Categorie.*/
+
+	/** we annotate the categories field with @ManyToMany.
+	This establishes the many-to-many relationship between Level and Categorie.*/
+
+	/**We use the @JoinTable annotation to specify the name of the join table (Level_Categorie) and the
+	 foreign key columns (levelNumber and idCategorie).*/
+
+	/**With these annotations, JPA will create the necessary join table (Level_Categorie) to manage the
+	 many-to-many relationship between Level and Categorie entities.*/
+
 
 	public Level() {
 		super();
 	}
-	public Level(String difficulty, String description , Categorie categorie , int number) {
+	public Level(String difficulty, String description) {
 		super();
-		this.levelNumber = number ;
 		this.difficulty = difficulty;
 		this.description = description;
-		this.categorie = categorie;
-		this.questions = new ArrayList<>();
 	}
-
-	public int getLevelNumber() {
-		return levelNumber;
-	}
-
-	public void setLevelNumber(int levelNumber) {
-		this.levelNumber = levelNumber;
-	}
-
 	public String getDifficulty() {
 		return difficulty;
 	}
-
 	public void setDifficulty(String difficulty) {
 		this.difficulty = difficulty;
 	}
-
 	public String getDescription() {
 		return description;
 	}
-
 	public void setDescription(String description) {
 		this.description = description;
 	}
-
-	public List<Question> getQuestions() {
-		return questions;
-	}
-
-	public void setQuestions(List<Question> questions) {
-		this.questions = questions;
-	}
-
-	public Categorie getCategorie() {
-		return categorie;
-	}
-
-	public void setCategorie(Categorie categorie) {
-		this.categorie = categorie;
-	}
-
 	@Override
 	public String toString() {
-		return "Level{" +
-				"levelNumber=" + levelNumber +
-				", difficulty='" + difficulty + '\'' +
-				", description='" + description + '\'' +
-				", questions=" + questions +
-				", categorie=" + categorie +
-				'}';
+		return "Level [difficulty=" + difficulty + ", description=" + description + "]";
 	}
+	
 }

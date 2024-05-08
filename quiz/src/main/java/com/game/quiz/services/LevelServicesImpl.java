@@ -24,8 +24,8 @@ public class LevelServicesImpl implements LevelServices{
     }
     //////////////////////
     @Override
-    public List<Level> getLevelByNumberByCategory(int idCategorie, int Number_level) {
-        return LevelRepository.findByCategories_IdAndNumberLevel(idCategorie, Number_level);
+    public List<Level> getLevelByNumberByCategory(int idCategorie, int levelNumber) {
+        return LevelRepository.findByCategories_IdAndNumberLevel(idCategorie, levelNumber);
     }
     /////////////////////////////////////////
 }

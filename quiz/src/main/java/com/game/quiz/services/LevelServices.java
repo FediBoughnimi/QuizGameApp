@@ -10,7 +10,7 @@ public interface LevelServices {
         ////////////////////
         List<Level> getAllLevelByIdCategory(int idCategorie);
         //////////////////////////
-        List<Level> getLevelByNumberByCategory(int idCategorie, int Number_level);
+        List<Level> getLevelByNumberByCategory(int idCategorie, int levelNumber);
         //////////////////////////
 
 }

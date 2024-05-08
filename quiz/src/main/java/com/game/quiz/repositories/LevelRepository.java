@@ -15,6 +15,6 @@ public interface LevelRepository extends JpaRepository<Level, Long> {
     @Query("SELECT l FROM Level l JOIN l.categories c WHERE c.idCategorie = :categoryId")
     List<Level> findByCategoryId(@Param("categoryId") int categoryId);
 
-    @Query("SELECT l FROM Level l JOIN l.categories c WHERE c.idCategorie = :categoryId AND l.Number_level = :Number_level")
-    List<Level> findByCategories_IdAndNumberLevel(@Param("categoryId") int categoryId, @Param("Number_level") int Number_level);
+    @Query("SELECT l FROM Level l JOIN l.categories c WHERE c.idCategorie = :categoryId AND l.levelNumber = :levelNumber")
+    List<Level> findByCategories_IdAndNumberLevel(@Param("categoryId") int categoryId, @Param("levelNumber") int levelNumber);
 }

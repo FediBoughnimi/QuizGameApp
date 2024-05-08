@@ -11,7 +11,6 @@ import java.util.List;
 
 @RestController
 @RequestMapping("/levels")
-
 public class LevelController {
     @Autowired
     private LevelServices levelServices;
@@ -19,16 +18,17 @@ public class LevelController {
 
     @GetMapping("/{numNiveau}")
     public Level getlevelById(@PathVariable int numNiveau) {
+
         return levelServices.getlevelById(numNiveau);
     }
 
     //////////////////////
-    @GetMapping("/category/{idCategorie}")
+    @GetMapping("/ByCategory/{idCategorie}")
     public List<Level> getAllLevelsByCategoryId(@PathVariable int idCategorie) {
         return levelServices.getAllLevelByIdCategory(idCategorie);
     }
-    //////////////////////
-    @GetMapping("/category/{idCategorie}/level/{numberLevel}")
+
+    @GetMapping("/ByCategory/{idCategorie}/Bylevel/{numberLevel}")
     public List<Level> getLevelByNumberByCategory(@PathVariable int idCategorie, @PathVariable int numberLevel) {
         return levelServices.getLevelByNumberByCategory(idCategorie, numberLevel);
     }

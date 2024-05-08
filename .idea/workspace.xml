@@ -4,18 +4,17 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="a7ea3af8-4a4f-4656-b170-380d732420bb" name="Changes" comment="Adding the RelationShips between all entities">
+    <list default="true" id="a7ea3af8-4a4f-4656-b170-380d732420bb" name="Changes" comment="adjusting some files">
+      <change afterPath="$PROJECT_DIR$/quiz/src/main/java/com/game/quiz/controllers/QuestionController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/quiz/src/main/java/com/game/quiz/repositories/QuestionRepository.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/quiz/src/main/java/com/game/quiz/services/QuestionService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/quiz/src/main/java/com/game/quiz/services/QuestionServiceImpl.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/quiz/src/main/java/com/game/quiz/QuizApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/quiz/src/main/java/com/game/quiz/QuizApplication.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/quiz/src/main/java/com/game/quiz/controllers/PartieController.java" beforeDir="false" afterPath="$PROJECT_DIR$/quiz/src/main/java/com/game/quiz/controllers/PartieController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/quiz/src/main/java/com/game/quiz/controllers/CategorieController.java" beforeDir="false" afterPath="$PROJECT_DIR$/quiz/src/main/java/com/game/quiz/controllers/CategorieController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/quiz/src/main/java/com/game/quiz/controllers/LevelController.java" beforeDir="false" afterPath="$PROJECT_DIR$/quiz/src/main/java/com/game/quiz/controllers/LevelController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/quiz/src/main/java/com/game/quiz/entities/Categorie.java" beforeDir="false" afterPath="$PROJECT_DIR$/quiz/src/main/java/com/game/quiz/entities/Categorie.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/quiz/src/main/java/com/game/quiz/entities/Level.java" beforeDir="false" afterPath="$PROJECT_DIR$/quiz/src/main/java/com/game/quiz/entities/Level.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/quiz/src/main/java/com/game/quiz/entities/Partie.java" beforeDir="false" afterPath="$PROJECT_DIR$/quiz/src/main/java/com/game/quiz/entities/Partie.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/quiz/src/main/java/com/game/quiz/entities/Player.java" beforeDir="false" afterPath="$PROJECT_DIR$/quiz/src/main/java/com/game/quiz/entities/Player.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/quiz/src/main/java/com/game/quiz/entities/PossibleAnswer.java" beforeDir="false" afterPath="$PROJECT_DIR$/quiz/src/main/java/com/game/quiz/entities/PossibleAnswer.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/quiz/src/main/java/com/game/quiz/entities/Question.java" beforeDir="false" afterPath="$PROJECT_DIR$/quiz/src/main/java/com/game/quiz/entities/Question.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/quiz/src/main/java/com/game/quiz/repositories/PartieRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/quiz/src/main/java/com/game/quiz/repositories/PartieRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/quiz/src/main/java/com/game/quiz/services/PartieService.java" beforeDir="false" afterPath="$PROJECT_DIR$/quiz/src/main/java/com/game/quiz/services/PartieService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/quiz/src/main/java/com/game/quiz/services/PartieServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/quiz/src/main/java/com/game/quiz/services/PartieServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/quiz/src/main/java/com/game/quiz/services/LevelServicesImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/quiz/src/main/java/com/game/quiz/services/LevelServicesImpl.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -23,6 +22,11 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="Git.Settings">
+    <option name="RECENT_BRANCH_BY_REPOSITORY">
+      <map>
+        <entry key="$PROJECT_DIR$" value="louay" />
+      </map>
+    </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="GitHubPullRequestSearchHistory">{
@@ -96,6 +100,7 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="add unversioned files" />
     <MESSAGE value="Adding the RelationShips between all entities" />
-    <option name="LAST_COMMIT_MESSAGE" value="Adding the RelationShips between all entities" />
+    <MESSAGE value="adjusting some files" />
+    <option name="LAST_COMMIT_MESSAGE" value="adjusting some files" />
   </component>
 </project>

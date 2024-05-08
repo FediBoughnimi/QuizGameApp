@@ -14,18 +14,15 @@ public class Categorie {
 	private String CategorieName;
 	private String CategorieDescription;
 
-	@OneToMany(mappedBy = "Categorie", cascade = CascadeType.ALL)/*One is the 'Categorie'(name of class) and Many is 'Partie'
-    Cela signifie qu'une instance de cette classe peut avoir plusieurs instances associées d'une autre classe.*/
-	public Collection<Partie> F ; //the Many
+	@OneToMany(mappedBy = "categorie", cascade = CascadeType.ALL)
+	public Collection<Partie> parties ;
 
-	@OneToMany(mappedBy = "Categorie", cascade = CascadeType.ALL)/*One is the 'Categorie'(name of class) and Many is 'Question'
-    Cela signifie qu'une instance de cette classe peut avoir plusieurs instances associées d'une autre classe.*/
-	public Collection <Question> G ; //the Many
+	@OneToMany(mappedBy = "categorie", cascade = CascadeType.ALL)
+	public Collection<Question> questions;
 
 	@ManyToMany(mappedBy = "categories")
 	private Set<Level> levels;
-	// we annotate the levels field with @ManyToMany(mappedBy = "categories").
-	// This tells JPA that the relationship is mapped by the categories field in the Level class.
+
 
 	public Categorie() {
 		super();

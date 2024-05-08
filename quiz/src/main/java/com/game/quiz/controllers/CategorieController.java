@@ -27,9 +27,7 @@ public class CategorieController {
         return categorieService.getCategorybyid(id);
     }
 
-    //////////////////////////////
 
-        ///////////////////////////
 
     }
 

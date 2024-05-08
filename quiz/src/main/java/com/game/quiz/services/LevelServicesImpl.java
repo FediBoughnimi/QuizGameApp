@@ -17,15 +17,15 @@ public class LevelServicesImpl implements LevelServices{
         // Implement logic to search for a level by numNiveau
         return LevelRepository.findBylevelNumber(levelNumber);
     }
-    //////////////////////
+
     @Override
     public List<Level> getAllLevelByIdCategory(int idCategorie) {
         return LevelRepository.findByCategoryId(idCategorie);
     }
-    //////////////////////
+
     @Override
     public List<Level> getLevelByNumberByCategory(int idCategorie, int levelNumber) {
         return LevelRepository.findByCategories_IdAndNumberLevel(idCategorie, levelNumber);
     }
-    /////////////////////////////////////////
+
 }

@@ -22,7 +22,7 @@ public class LevelController {
         return levelServices.getlevelById(numNiveau);
     }
 
-    //////////////////////
+
     @GetMapping("/ByCategory/{idCategorie}")
     public List<Level> getAllLevelsByCategoryId(@PathVariable int idCategorie) {
         return levelServices.getAllLevelByIdCategory(idCategorie);
@@ -32,5 +32,5 @@ public class LevelController {
     public List<Level> getLevelByNumberByCategory(@PathVariable int idCategorie, @PathVariable int numberLevel) {
         return levelServices.getLevelByNumberByCategory(idCategorie, numberLevel);
     }
-    //////////////////////
+
 }
